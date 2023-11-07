@@ -49,7 +49,7 @@ onEvent('click', submit, (event) => {
             reset.classList.add('visible');
         } else {
             if (guessNum === 0) {
-                alert(`You have run out attempts`);
+                alert(`You have run out attempts, You lost`);
                 location.reload();
             }
             if (num < randomNumber){
