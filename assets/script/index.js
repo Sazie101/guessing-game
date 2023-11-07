@@ -39,10 +39,6 @@ onEvent('click', submit, (event) => {
     guessNum--;
     guesses.innerText = `Guesses left: ${guessNum}`;
     let num = Number(userGuess.value);
-    if (guessNum === 0) {
-        alert(`You have run out attempts`);
-        location.reload();
-    }
     if (!num || isNaN(num)) {
         alert("You must enter a number!");
     } else {
@@ -52,6 +48,10 @@ onEvent('click', submit, (event) => {
             alert(`Congratulations! You've won.`);
             reset.classList.add('visible');
         } else {
+            if (guessNum === 0) {
+                alert(`You have run out attempts`);
+                location.reload();
+            }
             if (num < randomNumber){
                 userGuess.placeholder = 'Too low';
             } else {
