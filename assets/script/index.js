@@ -46,6 +46,7 @@ onEvent('click', submit, (event) => {
             guess.classList.add('visible');
         if (num === randomNumber) {
             alert(`Congratulations! You've won.`);
+            userGuess.placeholder = 'You got it';
             reset.classList.add('visible');
         } else {
             if (guessNum === 0) {
